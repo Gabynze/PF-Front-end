@@ -1,0 +1,16 @@
+/* Modal */
+.confirm-modal {
+  background-color: #264653 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 400px;
+  height: 150px;
+  border: 2px solid #fff !important;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-80%, -10%);
+  border-radius: 10px;
+}

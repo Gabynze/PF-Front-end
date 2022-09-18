@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif !important;
+  background-color: #ced4da !important;
+}
+
+/*estilo Navegação*/
+.botao-inicio {
+  background-color: #264653;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.btn {
+  color: #ced4da !important;
+}
+
+/*estilo Adicionar*/
+.col-add {
+  background-color: #264653;
+  border-radius: 30px;
+}

@@ -1,0 +1,25 @@
+.container-todos-grupos {
+  display: flex;
+  flex-direction: column;
+  min-width: 350px;
+  min-height: 300px;
+  background-color: #2a9d8f;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+.container-todos-grupos h1 {
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  padding-top: 15px;
+  font-weight: bold;
+}
+
+.container-formulario-grupo{
+  display: flex;
+  flex-direction: row;
+  min-width: 0;
+  margin: 5px;
+}
+

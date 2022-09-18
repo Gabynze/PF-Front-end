@@ -1,0 +1,23 @@
+/* Modal */
+.confirm-modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 400px;
+  height: 150px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+}
+
+.modal-info h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #9e3c3c;
+}
+
+.modal-button {
+  display: flex;
+  justify-content: space-evenly;
+}

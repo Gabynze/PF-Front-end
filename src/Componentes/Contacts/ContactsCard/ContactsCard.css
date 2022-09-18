@@ -1,0 +1,11 @@
+/*estilo PrimeiroCard*/
+.img-contact {
+  width: 150px;
+  height: 150px;
+  border-radius: 5px;
+  border: solid 1px black;
+}
+
+.card {
+  background-color: #264653 !important;
+}
