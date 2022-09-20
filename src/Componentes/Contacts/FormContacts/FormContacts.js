@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
+
 
 // import './FormContacts.css'
 
-function FormContacts({ onSubmit, buttonTitle, contactsInfo }) {
+function FormContacts({ groupsId, onSubmit, buttonTitle, contactsInfo }) {
+
+  // const {groupsId}= useParams ();
   // estados para submit
   const [name, setName] = useState("");
   const [surname, setSurName] = useState("");
@@ -24,6 +27,13 @@ function FormContacts({ onSubmit, buttonTitle, contactsInfo }) {
     setEmail(contactsInfo?.Email);
     setGrupo(contactsInfo?.Grupo);
   }, [contactsInfo]);
+  
+
+  useEffect(() => {
+    console.log(groupsId);
+    setGrupo(groupsId);
+  }, [groupsId])
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -55,12 +65,13 @@ function FormContacts({ onSubmit, buttonTitle, contactsInfo }) {
                   >
                     {buttonTitle}
                   </button>
-                  <Link
-                    to={"/groupsContacts/view/:groupsId"}
+                  <Link 
+                    to={`/groupsContacts/view/${groupsId}`}
                     className="btn btn-outline-danger ms-2 fw-bold"
                   >
                     Cancelar
                   </Link>
+                  
                 </div>
                 <div className="mb-2">
                   <input

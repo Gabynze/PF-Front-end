@@ -8,7 +8,7 @@ function ContactsCard({ nome, sobrenome, telefone, email, onDelete, upDate }) {
       <section className="contact-list">
         <div className="container">
           <div className="row">
-            <div className="col-md-5 my-1">
+            <div className="col-md-6 my-1">
               <div className="card">
                 <div className="card-body shadow">
                   <div className="row align-items-center d-flex justify-content-around">

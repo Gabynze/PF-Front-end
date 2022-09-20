@@ -1,12 +1,12 @@
-import React from 'react'
-import ListContacts from '../ListContacts/ListContacts'
+// import React from 'react'
+// import ListContacts from '../ListContacts/ListContacts'
 
-function ViewGroup() {
-  return (
-    <div>
-      <ListContacts/>
-    </div>
-  )
-}
+// function ViewGroup() {
+//   return (
+//     <div>
+//       <ListContacts/>
+//     </div>
+//   )
+// }
 
-export default ViewGroup
+// export default ViewGroup

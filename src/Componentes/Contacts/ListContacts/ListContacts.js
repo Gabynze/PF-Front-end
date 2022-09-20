@@ -4,7 +4,7 @@ import ContactsCard from "../ContactsCard/ContactsCard";
 import { Link } from "react-router-dom";
 // import ModalContacts from '../ModalContacts/ModalContacts';
 import { ModalContacts } from "../index";
-import { useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 function ListContacts() {
   let navigate = useNavigate();
@@ -26,15 +26,18 @@ function ListContacts() {
 
   const [search, setSearch] = useState("");
 
+  const {groupsId}= useParams ();
+  // console.log("parametro", parametro );
+
   function allContacts() {
-    fetch ("http://localhost:8080/api/contatos")
+    fetch(`http://localhost:8080/api/grupos/${groupsId}`)
       .then((response) => response.json())
       .then((data) => setListContacts(data));
   }
 
   useEffect(() => {
     allContacts();
-  }, []);
+  },);
 
   // Para deletar
 
@@ -79,7 +82,7 @@ function ListContacts() {
         <div className="col-dir">
           <p className="h2">
             <Link
-              to={"/RegisterContacts"}
+              to={`/RegisterContacts/${groupsId}`}
               className="btn btn-success ms-2 shadow"
             >
               Adicionar Contato <i className="fa fa-plus-circle ms-1" />
@@ -119,17 +122,18 @@ function ListContacts() {
 
       {/* listar todos os contatos */}
       <div className="container-cards">
-        {results?.map((contact) => {
+        {results?.map((contact, index) => {
           return (
             <ContactsCard
-              key={contact._id}
+              key={index}
               id={contact._id}
               nome={contact.Nome}
               sobrenome={contact.Sobrenome}
               telefone={contact.Telefone}
               email={contact.Email}
               onDelete={() => onDelete(contact._id)}
-              upDate={() => navigate(`/Updatecontacts/${contact._id}`)}
+              // upDate={() => navigate(`/Updatecontacts/${contact._id}`)}
+              upDate={() => navigate(`/Updatecontacts/${groupsId}/edit/${contact._id}`)}
             />
           );
         })}

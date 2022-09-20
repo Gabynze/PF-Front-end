@@ -1,24 +1,26 @@
 import React from "react";
 import FormContacts from "../FormContacts/FormContacts";
-import { useNavigate } from "react-router-dom";
+import { useParams,useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 
 
 function RegisterContacts() {
   let navigate = useNavigate();
+  const {groupsId}= useParams ();
 
   const onSubmit = async (contactsData) => {
-    const response = await fetch("http://localhost:8080/api/contatos/", {
+    const response = await fetch('http://localhost:8080/api/contatos/', {
       method: "POST",
       body: JSON.stringify(contactsData),
       headers: { "content-type": "application/json; charset=UTF-8" },
     });
     if (response.ok) {
       console.log("OKS", response.ok);
-      navigate("/groupsContacts/view/:groupsId");
+      navigate(`/groupsContacts/view/${groupsId}`);
     } else console.log("ERRO");
   };
+
 
   return (
     <>
@@ -35,6 +37,7 @@ function RegisterContacts() {
           <h2 className="h4 text-success fw-bold ms-5">Criar Novo Contato</h2>
 
           <FormContacts
+            groupsId={groupsId}
             onSubmit={(contactsData) => onSubmit(contactsData)}
             buttonTitle="Cadastrar"
           />

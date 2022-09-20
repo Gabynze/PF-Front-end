@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./GroupList.css";
 import Modal from "../Modal/Modal";
 import GroupsCard from "../GroupsCard/GroupsCard";
+import {useNavigate} from 'react-router-dom'
 
 function ListGrupos() {
   const [grupo, setGrupo] = useState("");
@@ -17,6 +18,8 @@ function ListGrupos() {
 
   // estados para editar
   const [isUpdate, setIsUpDate] = useState();
+
+  let navigate = useNavigate ();
 
   const handleAdd = async (e) => {
     e.preventDefault();
@@ -70,14 +73,17 @@ function ListGrupos() {
   };
 
   // EDITAR
-  const onUpdate = (grupoId) => {
-    fetch(`http://localhost:8080/api/grupos/${grupoId}`)
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("retorno do alterar", data);
-        setIsUpDate(grupoId);
-        setGrupo(data.Grupo);
-      });
+  const onUpdate = (grupo) => {
+    setIsUpDate(grupo._id);
+    setGrupo(grupo.Grupo);
+
+    // fetch(`http://localhost:8080/api/grupos/${grupoId}`)
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     console.log("retorno do alterar", data);
+    //     setIsUpDate(grupoId);
+    //     setGrupo(data.Grupo);
+    //   });
   };
   const handleUpdate = async () => {
     const data = {
@@ -96,7 +102,9 @@ function ListGrupos() {
     }
   };
 
-  // console.log ('listagrupos', listaGrupos)
+
+
+  console.log ('listagrupos', listaGrupos)
 
   return (
     <div className="container-todos-grupos">
@@ -132,7 +140,8 @@ function ListGrupos() {
               id={grupo._id}
               grupo={grupo.Grupo}
               onDelete={() => onDelete(grupo._id)}
-              upDate={() => onUpdate(grupo._id)}
+              upDate={() => onUpdate(grupo)}
+              onViewget ={() => navigate(`/groupsContacts/view/${grupo._id}`)}
             />
           );
         })}

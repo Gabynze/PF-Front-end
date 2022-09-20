@@ -8,8 +8,9 @@ function UpdateContacts() {
 
   let navigate = useNavigate();
 
-  const {UpdateContactsId } = useParams();
-  
+  const {groupsId}= useParams();
+
+  const {UpdateContactsId} = useParams();
 
   const [contactsInfo, setContactsInfo] = useState();
 
@@ -33,7 +34,8 @@ function UpdateContacts() {
     });
     if (response.ok) {
       console.log('OKS', response.ok);
-      navigate('/groupsContacts/view/:groupsId');
+
+      navigate(`/groupsContacts/view/${groupsId}`);
     } else{
       console.log ('ERRO');
     }
@@ -54,6 +56,7 @@ function UpdateContacts() {
       <h2 className="h4 text-success fw-bold ms-5">Atualizar Contato</h2>
 
       <FormContacts
+        groupsId={groupsId}
         onSubmit={(contactsData)=> handleUpdate(contactsData)}
         contactsInfo= {contactsInfo}
         buttonTitle= 'Atualizar'
