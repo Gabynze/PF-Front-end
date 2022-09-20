@@ -7,7 +7,7 @@ import {useNavigate} from 'react-router-dom'
 function ListGrupos() {
   const [grupo, setGrupo] = useState("");
 
-  // estados para use effect
+  // estados para lista e use effect
   const [listaGrupos, setListaGrupos] = useState();
 
   // estados para modal
@@ -35,6 +35,7 @@ function ListGrupos() {
     });
     if (response.ok) {
       console.log("OKS", response.ok);
+      setGrupo ('');
       grupos();
     } else alert("Erro");
   };
@@ -55,15 +56,14 @@ function ListGrupos() {
   };
 
   const handleDelete = async () => {
-    setShowModal(false);
+    
     const response = await fetch("http://localhost:8080/api/grupos/" + grupoDelete, {
       method: "DELETE",
     });
     if (response.ok) {
-      alert("Deletado com sucesso");
-      // fechar a modal tambem pode ser aqui
-      // setShowModal(false);
+      setShowModal(false);
       grupos();
+      alert("Deletado com sucesso");
     }
   };
 
@@ -76,14 +76,6 @@ function ListGrupos() {
   const onUpdate = (grupo) => {
     setIsUpDate(grupo._id);
     setGrupo(grupo.Grupo);
-
-    // fetch(`http://localhost:8080/api/grupos/${grupoId}`)
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     console.log("retorno do alterar", data);
-    //     setIsUpDate(grupoId);
-    //     setGrupo(data.Grupo);
-    //   });
   };
   const handleUpdate = async () => {
     const data = {
@@ -102,9 +94,7 @@ function ListGrupos() {
     }
   };
 
-
-
-  console.log ('listagrupos', listaGrupos)
+  // console.log ('listagrupos', listaGrupos)
 
   return (
     <div className="container-todos-grupos">

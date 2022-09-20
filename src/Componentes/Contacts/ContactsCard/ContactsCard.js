@@ -1,6 +1,8 @@
 import React from "react";
-// import { Link } from "react-router-dom";
 import "./ContactsCard.css";
+import { BsFillPersonFill } from "react-icons/bs"
+import { MdEmail } from "react-icons/md"
+
 
 function ContactsCard({ nome, sobrenome, telefone, email, onDelete, upDate }) {
   return (
@@ -13,11 +15,6 @@ function ContactsCard({ nome, sobrenome, telefone, email, onDelete, upDate }) {
                 <div className="card-body shadow">
                   <div className="row align-items-center d-flex justify-content-around">
                     <div className="col-md-1 d-flex flex-column align-items-center">
-                      {/*<Link 
-                      to={''}
-                      className='btn btn-outline-warning shadow my-1'>
-                        <i className='fa fa-eye'/>
-  </Link>*/}
                       <button
                         className="btn btn-outline-primary shadow my-1"
                         onClick={upDate}
@@ -31,18 +28,10 @@ function ContactsCard({ nome, sobrenome, telefone, email, onDelete, upDate }) {
                         <i className="fa fa-trash" />
                       </button>
                     </div>
-                    <div className="col-md-4">
-                      <img
-                        src="https://www.pinpng.com/pngs/m/343-3435180_default-user-profile-image-png-not-available-transparent.png"
-                        className="img-contact img-fluid shadow"
-                        alt="imagem de usuário"
-                      />
-                    </div>
-
-                    <div className="col-md-7">
+                    <div className="col-md-8">
                       <ul className="list-group">
                         <li className="list-group-item list-group-item-action">
-                          Nome: {""}
+                        <BsFillPersonFill className='icono'/> Nome: {""}
                           <span className="fw-bold">{nome}</span>
                         </li>
                         <li className='list-group-item list-group-item-action'>
@@ -50,7 +39,7 @@ function ContactsCard({ nome, sobrenome, telefone, email, onDelete, upDate }) {
                           <span className='fw-bold'>{sobrenome}</span>
                         </li>
                         <li className="list-group-item list-group-item-action">
-                          Email: {""}
+                        <MdEmail className='icono'/> Email: {""}
                           <span className="fw-bold">{email}</span>
                         </li>
                         <li className="list-group-item list-group-item-action">

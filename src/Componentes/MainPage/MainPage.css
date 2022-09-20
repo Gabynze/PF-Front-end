@@ -1,35 +1,3 @@
-/*.container-pagina-inicial{
-  display: flex;
-  flex-direction: column;
-}
-
-.container-img-list{
-  display: flex;
-  flex-direction: row;
-  min-width: 500px;
-  justify-content: space-around;
-}
-
-.image-principal{
-  width: 900px;
-  height: 440px;
-  border-radius: 20px;
-}
-
-.texto-pagina{
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  font-size: 30px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  color: white;
-  height: 100px;
-  width: 300px;
-  position: absolute;
-  top: 31%;
-  left: 32%;
-}*/
-
 .container-pagina-inicial{
   display: flex;
   flex-direction: column;

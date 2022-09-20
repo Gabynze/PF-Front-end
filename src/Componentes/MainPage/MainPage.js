@@ -3,7 +3,7 @@ import NavBar from "../NavBar/NavBar";
 import GroupList from "../Groups/GroupList/GroupList";
 import imagePrincipal from "../../Images/imagePrincipal.jpg";
 import "./MainPage.css";
-// import ListContacts from '../Contacts/ListContacts/ListContacts'
+
 
 function MainPage() {
   return (

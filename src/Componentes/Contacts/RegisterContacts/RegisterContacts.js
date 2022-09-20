@@ -4,7 +4,6 @@ import { useParams,useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 
-
 function RegisterContacts() {
   let navigate = useNavigate();
   const {groupsId}= useParams ();
@@ -20,7 +19,6 @@ function RegisterContacts() {
       navigate(`/groupsContacts/view/${groupsId}`);
     } else console.log("ERRO");
   };
-
 
   return (
     <>

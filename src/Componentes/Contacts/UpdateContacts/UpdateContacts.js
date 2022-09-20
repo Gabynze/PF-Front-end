@@ -24,7 +24,6 @@ function UpdateContacts() {
       });
   },[UpdateContactsId]);
 
-
   const handleUpdate = async(contactsData) => {
   
     const response = await fetch('http://localhost:8080/api/contatos/' + contactsData._id, {
@@ -40,7 +39,6 @@ function UpdateContacts() {
       console.log ('ERRO');
     }
   }
-
 
   return (
     <>
@@ -62,8 +60,6 @@ function UpdateContacts() {
         buttonTitle= 'Atualizar'
       />
       </div>
-
-
     </>
   )
 }

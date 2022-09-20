@@ -2,11 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom"
 
 
-// import './FormContacts.css'
-
 function FormContacts({ groupsId, onSubmit, buttonTitle, contactsInfo }) {
 
-  // const {groupsId}= useParams ();
   // estados para submit
   const [name, setName] = useState("");
   const [surname, setSurName] = useState("");
@@ -109,15 +106,7 @@ function FormContacts({ groupsId, onSubmit, buttonTitle, contactsInfo }) {
                     onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
-                {/*<div className='mb-2'>
-                  <input
-                    type='text'
-                    className='form-control'
-                    placeholder='url da foto'
-                  />
-  </div>*/}
                 <div className="mb-2">
-                  {/* <label className="text-white p-1">Selecione Grupo</label> */}
                   <select  value={grupo} onChange = {(e) => setGrupo(e.target.value)}>
                     <option value="">Selecione Grupo</option>
                     {

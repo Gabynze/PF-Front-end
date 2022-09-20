@@ -2,30 +2,22 @@ import React, { useEffect, useState } from "react";
 import NavBar from "../../NavBar/NavBar";
 import ContactsCard from "../ContactsCard/ContactsCard";
 import { Link } from "react-router-dom";
-// import ModalContacts from '../ModalContacts/ModalContacts';
 import { ModalContacts } from "../index";
 import { useParams, useNavigate } from "react-router-dom";
 
 function ListContacts() {
   let navigate = useNavigate();
-
-  // estados para submit
-  // const [name, setName] = useState('');
-  // const [surname, setSurName] = useState('');
-  // const [phone, setPhone] = useState ('');
-  // const [email, setEmail] = useState ('');
+  // estados para listar 
   const [listContacts, setListContacts] = useState();
-  // const [contactGrupo, setContactGrupo] = useState ()
-
+  
   // estados para deletar
   const [showModal, setShowModal] = useState(false);
   const [contactToDelete, setContactToDelete] = useState();
 
-  // estados para editar
-  // const [isUpdate, setIsUpdate]= useState();
+  // estados para buscar
+  const [search, setSearch] = useState();
 
-  const [search, setSearch] = useState("");
-
+  // pegar Id da URL
   const {groupsId}= useParams ();
   // console.log("parametro", parametro );
 
@@ -40,7 +32,6 @@ function ListContacts() {
   },);
 
   // Para deletar
-
   const onDelete = (contactId) => {
     setContactToDelete(contactId);
     setShowModal(true);
@@ -66,14 +57,14 @@ function ListContacts() {
   };
 
   // Filtrar-buscar
-  const results = !search
+  const contacts = !search
     ? listContacts
     : listContacts.filter((data) =>
         data.Nome.toLowerCase().includes(search.toLocaleLowerCase())
       );
   // ////
 
-  console.log("lista", listContacts);
+  // console.log("lista", listContacts);
 
   return (
     <>
@@ -122,7 +113,7 @@ function ListContacts() {
 
       {/* listar todos os contatos */}
       <div className="container-cards">
-        {results?.map((contact, index) => {
+        {contacts?.map((contact, index) => {
           return (
             <ContactsCard
               key={index}
