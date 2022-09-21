@@ -47,7 +47,7 @@ function UpdateContacts() {
           to={"/"}
           className="btn btn-outline-secondary ms-2 shadow fw-bold"
         >
-          <i class="fa-solid fa-house-user"></i> Início
+          <i className="fa-solid fa-house-user"></i> Início
         </Link>
       </div>
       <div className="col">

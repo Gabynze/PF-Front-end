@@ -4,6 +4,7 @@ import ContactsCard from "../ContactsCard/ContactsCard";
 import { Link } from "react-router-dom";
 import { ModalContacts } from "../index";
 import { useParams, useNavigate } from "react-router-dom";
+import './ListContacts.css'
 
 function ListContacts() {
   let navigate = useNavigate();

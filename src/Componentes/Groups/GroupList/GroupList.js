@@ -111,7 +111,7 @@ function ListGrupos() {
             />
           </div>
         </form>
-        <div className="mb-2">
+        <div className="mb-2" >
           <button
             className="btn btn-dark shadow ms-1"
             type="submit"

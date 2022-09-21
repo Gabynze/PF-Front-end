@@ -1,11 +1,50 @@
 /*estilo PrimeiroCard*/
-.img-contact {
-  width: 150px;
-  height: 150px;
-  border-radius: 5px;
-  border: solid 1px black;
+.info-contacts li{
+  /* border: 3px solid blue; */
+  min-width: 400px;
 }
 
-.card {
-  background-color: #264653 !important;
+.info-contacts{
+  margin: 30px 30px 0px 0px;
 }
+
+
+.card-info {
+  background-color: #264653 !important;
+  min-width: 500px;
+  height: 220px;
+  border-radius: 10px;
+  margin: 0px 0px 10px 70px;
+  align-content: center;
+  /* align-items: center; */
+  justify-content: center;
+  /* border: 3px solid red; */
+   
+}
+
+.button-card{
+  margin-left: 25px;
+  padding-top: 25px;
+}
+
+/* CSS CARD MODELO 02*/
+
+/* .col-md-7 {
+  color: #264653 !important;
+  margin: 10px;
+  background-color: #fff !important ;
+  border: solid 2px;
+  border-radius: 10px;
+}
+
+.list-group-item {
+  background-color: #fff !important ;
+}
+.col-md-7:hover {
+  transform: scale(1.1);
+}
+
+.btnz {
+  background-color: #264653 !important;
+  border-radius: 10px;
+} */
