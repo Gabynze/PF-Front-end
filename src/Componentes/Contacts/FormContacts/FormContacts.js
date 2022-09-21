@@ -35,16 +35,17 @@ function FormContacts({ groupsId, onSubmit, buttonTitle, contactsInfo}) {
   
 
   useEffect(() => {
-    console.log(groupsId);
     setGrupo(groupsId);
   }, [groupsId])
   
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // let validacion= Object.values(form).some(obj => obj == "");
+    // let validacion= Object.values(form).some(obj => obj === "");
     // SetValidacion( validacion)
+    // let newProp=form;
+    // newProp[e.target.name]=e.target.value;
+    // setForm({...newProp})
 
     const data = {
       Nome: name,
@@ -90,7 +91,7 @@ function FormContacts({ groupsId, onSubmit, buttonTitle, contactsInfo}) {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                   />
-                  {/* {validacion && form["name"] == "" ? <span>o campos nome precisar ser preenchido</span>:""} */}
+                  {/* {validacion && form["name"] === "" ? <span></span>:""} */}
                 </div>
                 <div className="mb-2">
                   <input
@@ -100,7 +101,7 @@ function FormContacts({ groupsId, onSubmit, buttonTitle, contactsInfo}) {
                     value={surname}
                     onChange={(e) => setSurName(e.target.value)}
                   />
-                  {/* {validacion  && form["surname"] == "" ? <span>o campos Sobrenome precisar ser preenchido</span>:""} */}
+                  {/* {validacion  && form["surname"] === "" ? <span></span>:""} */}
                 </div>
                 <div className="mb-2">
                   <input
@@ -110,7 +111,7 @@ function FormContacts({ groupsId, onSubmit, buttonTitle, contactsInfo}) {
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                   />
-                  {/* {validacion  && form["phone"] == "" ? <span>o campos Telefone precisar ser preenchido</span>:""} */}
+                  {/* {validacion && form["phone"] === "" ? <span></span>:""} */}
                 </div>
                 <div className="mb-2">
                   <input
@@ -120,7 +121,7 @@ function FormContacts({ groupsId, onSubmit, buttonTitle, contactsInfo}) {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
-                  {/* {validacion  && form["email"] == "" ? <span>o campos email precisar ser preenchido</span>:""} */}
+                  {/* {validacion  && form["email"] === "" ? <span></span>:""} */}
                 </div>
                 <div className="mb-2">
                   <select  value={grupo} onChange = {(e) => setGrupo(e.target.value)}>
@@ -141,45 +142,7 @@ function FormContacts({ groupsId, onSubmit, buttonTitle, contactsInfo}) {
     </>
   );
 }
-
 export default FormContacts;
 
-// <section className="contact-list">
-      //   <div className="container">
-      //     <div className="col-md-6 my-4">
-      //       <div className="col-md-7 shadow">
-      //         <ul className="list-group">
-      //           <li className="list-group-item list-group-item-action">
-      //             <i className="fa-solid fa-user me-2" />
-      //             Nome: {""}
-      //             <span className="fw-bold">{nome}</span>
-      //           </li>
-      //           <li className="list-group-item list-group-item-action">
-      //             Sobrenome: {""}
-      //             <span className="fw-bold">{sobrenome}</span>
-      //           </li>
-      //           <li className="list-group-item list-group-item-action">
-      //             <i className="fa-solid fa-envelope me-2" />
-      //             Email: {""}
-      //             <span className="fw-bold">{email}</span>
-      //           </li>
-      //           <li className="list-group-item list-group-item-action">
-      //             <i className="fa-solid fa-phone me-2" />
-      //             Telefone: {""}
-      //             <span className="fw-bold">{telefone}</span>
-      //           </li>
-      //           <span className="btnz">
-      //             <button className="btn btn-outline-primary shadow m-1"
-      //               onClick={upDate}>
-      //               <i className="fa fa-pen" />
-      //             </button>
-      //             <button className="btn btn-outline-danger shadow my-1"
-      //               onClick={onDelete}>
-      //               <i className="fa fa-trash" />
-      //             </button>
-      //           </span>
-      //         </ul>
-      //       </div>
-      //     </div>
-      //   </div>
-      // </section>
+
+   

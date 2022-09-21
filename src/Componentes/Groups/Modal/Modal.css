@@ -1,11 +1,11 @@
 /* Modal */
-.confirm-modal {
+.confirm-modal-grupo {
   background-color: #264653 !important;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  width: 400px;
+  width: 500px;
   height: 150px;
   border: 2px solid #fff !important;
   position: fixed;

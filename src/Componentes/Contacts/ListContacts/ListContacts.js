@@ -8,6 +8,7 @@ import './ListContacts.css'
 
 function ListContacts() {
   let navigate = useNavigate();
+
   // estados para listar 
   const [listContacts, setListContacts] = useState();
   
@@ -20,17 +21,18 @@ function ListContacts() {
 
   // pegar Id da URL
   const {groupsId}= useParams ();
-  // console.log("parametro", parametro );
+
+  // para listar os contatos por grupo
 
   function allContacts() {
     fetch(`http://localhost:8080/api/grupos/${groupsId}`)
       .then((response) => response.json())
       .then((data) => setListContacts(data));
   }
-
   useEffect(() => {
     allContacts();
   },);
+  // //////
 
   // Para deletar
   const onDelete = (contactId) => {
@@ -56,6 +58,7 @@ function ListContacts() {
     setContactToDelete("");
     setShowModal(false);
   };
+  // //////
 
   // Filtrar-buscar
   const contacts = !search
@@ -64,8 +67,6 @@ function ListContacts() {
         data.Nome.toLowerCase().includes(search.toLocaleLowerCase())
       );
   // ////
-
-  // console.log("lista", listContacts);
 
   return (
     <>
@@ -124,7 +125,6 @@ function ListContacts() {
               telefone={contact.Telefone}
               email={contact.Email}
               onDelete={() => onDelete(contact._id)}
-              // upDate={() => navigate(`/Updatecontacts/${contact._id}`)}
               upDate={() => navigate(`/Updatecontacts/${groupsId}/edit/${contact._id}`)}
             />
           );

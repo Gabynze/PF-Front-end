@@ -21,13 +21,13 @@ function ListGrupos() {
 
   let navigate = useNavigate ();
 
+  // Adicionar e listar os grupos
   const handleAdd = async (e) => {
     e.preventDefault();
-
     const data = {
-      Grupo: grupo,
+      'Grupo': grupo
     };
-    console.log("data", data);
+
     const response = await fetch("http://localhost:8080/api/grupos/", {
       method: "POST",
       body: JSON.stringify(data),
@@ -37,7 +37,7 @@ function ListGrupos() {
       console.log("OKS", response.ok);
       setGrupo ('');
       grupos();
-    } else alert("Erro");
+    } else console.log("ERRO");
   };
 
   function grupos() {
@@ -50,6 +50,7 @@ function ListGrupos() {
     grupos();
   }, []);
 
+  // para Delete
   const onDelete = (grupoId) => {
     setGrupoDelete(grupoId);
     setShowModal(true);
@@ -71,8 +72,9 @@ function ListGrupos() {
     setGrupoDelete("");
     setShowModal(false);
   };
+  // ////
 
-  // EDITAR
+  // para EDITAR
   const onUpdate = (grupo) => {
     setIsUpDate(grupo._id);
     setGrupo(grupo.Grupo);
@@ -93,8 +95,7 @@ function ListGrupos() {
       grupos();
     }
   };
-
-  // console.log ('listagrupos', listaGrupos)
+  // ////
 
   return (
     <div className="container-todos-grupos">
@@ -111,7 +112,7 @@ function ListGrupos() {
             />
           </div>
         </form>
-        <div className="mb-2" >
+        <div className="mb-2">
           <button
             className="btn btn-dark shadow ms-1"
             type="submit"

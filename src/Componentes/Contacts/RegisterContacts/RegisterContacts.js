@@ -22,7 +22,7 @@ function RegisterContacts() {
 
   return (
     <>
-    <div className="botao-inicio p-3 shadow">
+      <div className="botao-inicio p-3 shadow">
         <Link
           to={"/"}
           className="btn btn-outline-secondary ms-2 shadow fw-bold"
@@ -33,7 +33,6 @@ function RegisterContacts() {
       <div className="row">
         <div className="col">
           <h2 className="h4 text-success fw-bold ms-5">Criar Novo Contato</h2>
-
           <FormContacts
             groupsId={groupsId}
             onSubmit={(contactsData) => onSubmit(contactsData)}

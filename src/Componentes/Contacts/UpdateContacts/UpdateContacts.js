@@ -14,7 +14,7 @@ function UpdateContacts() {
 
   const [contactsInfo, setContactsInfo] = useState();
 
-  // // Editar
+  // // Editar e mostrar os dados no formulario
   useEffect(() => {
     fetch(`http://localhost:8080/api/contatos/${UpdateContactsId}`)
       .then((response) => response.json())
@@ -42,7 +42,7 @@ function UpdateContacts() {
 
   return (
     <>
-    <div className="botao-inicio p-3 shadow">
+      <div className="botao-inicio p-3 shadow">
         <Link
           to={"/"}
           className="btn btn-outline-secondary ms-2 shadow fw-bold"
@@ -51,17 +51,17 @@ function UpdateContacts() {
         </Link>
       </div>
       <div className="col">
-      <h2 className="h4 text-success fw-bold ms-5">Atualizar Contato</h2>
+        <h2 className="h4 text-success fw-bold ms-5">Atualizar Contato</h2>
 
-      <FormContacts
-        groupsId={groupsId}
-        onSubmit={(contactsData)=> handleUpdate(contactsData)}
-        contactsInfo= {contactsInfo}
-        buttonTitle= 'Atualizar'
-      />
+        <FormContacts
+          groupsId={groupsId}
+          onSubmit={(contactsData)=> handleUpdate(contactsData)}
+          contactsInfo= {contactsInfo}
+          buttonTitle= 'Atualizar'
+        />
       </div>
     </>
   )
 }
 
-export default UpdateContacts
+export default UpdateContacts;

@@ -4,10 +4,10 @@ import "./Modal.css";
 function Modal({ handleDelete, handleCancelar }) {
   return (
     <div className="col">
-      <div className="confirm-modal shadow">
+      <div className="confirm-modal-grupo shadow">
         <div className="modal-info text-white">
-          <h5 className="text-danger">Deseja excluir o grupo selecionado?</h5>
-          <p>se eliminar não voltará a ver este registro</p>
+          <h5 className="text-danger">Você tem certeza de que deseja excluir o grupo selecionado?</h5>
+          <p>se eliminar não voltará a ver os contatos de este grupo</p>
         </div>
         <div className="modal-button">
           <button
