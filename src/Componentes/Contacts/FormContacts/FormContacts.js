@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom"
+import './FormContacts.css'
 
 
 function FormContacts({ groupsId, onSubmit, buttonTitle, contactsInfo}) {
@@ -19,6 +20,7 @@ function FormContacts({ groupsId, onSubmit, buttonTitle, contactsInfo}) {
   const [email, setEmail] = useState("");
   const [grupo, setGrupo] = useState("1");
   const [grupos, setGrupos] = useState([]);
+  const errorMessage = validate (name, surname, phone, email);
 
   useEffect(() => {
     fetch ("http://localhost:8080/api/grupos/")
@@ -132,6 +134,7 @@ function FormContacts({ groupsId, onSubmit, buttonTitle, contactsInfo}) {
                       ))
                     }
                   </select>
+                  <p className="p-validation">{errorMessage}</p>
                 </div>
               </form>
             </div>
@@ -141,6 +144,13 @@ function FormContacts({ groupsId, onSubmit, buttonTitle, contactsInfo}) {
      
     </>
   );
+}
+
+const validate = (name, surname, phone, email) => {
+  if (!name) return 'Todos os campos precisam ser preenchidos';
+  if (!surname) return 'Campo Sobrenome precisa ser preenchido';
+  if (!phone) return 'Campo Telefone precisa ser preenchido';
+  if(!email) return 'Campo email precisa ser preenchido';
 }
 export default FormContacts;
 
