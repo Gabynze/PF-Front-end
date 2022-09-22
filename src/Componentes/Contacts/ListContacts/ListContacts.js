@@ -49,7 +49,6 @@ function ListContacts() {
       }
     );
     if (response.ok) {
-      alert("Deletado com sucesso");
       allContacts();
     }
   };

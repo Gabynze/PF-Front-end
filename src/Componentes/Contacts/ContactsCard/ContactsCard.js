@@ -36,14 +36,14 @@ function ContactsCard({ nome, sobrenome, telefone, email, onDelete, upDate }) {
                           <span className='fw-bold'>{sobrenome}</span>
                         </li>
                         <li className="list-group-item list-group-item-action">
-                          <i className="fa-solid fa-envelope me-2" /> 
-                        Email: {''}
-                          <span className="fw-bold">{email}</span>
-                        </li>
-                        <li className="list-group-item list-group-item-action">
                           <i className="fa-solid fa-phone me-2" />
                           Telefone: {''}
                           <span className="fw-bold">{telefone}</span>
+                        </li>
+                        <li className="list-group-item list-group-item-action">
+                          <i className="fa-solid fa-envelope me-2" /> 
+                        Email: {''}
+                          <span className="fw-bold">{email}</span>
                         </li>
                       </ul>
                     </div>

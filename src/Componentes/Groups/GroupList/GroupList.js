@@ -64,7 +64,6 @@ function ListGrupos() {
     if (response.ok) {
       setShowModal(false);
       grupos();
-      alert("Deletado com sucesso");
     }
   };
 
